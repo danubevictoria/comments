@@ -16,3 +16,23 @@
 	margin-top: 20px; 
 	/*background-color: #E8E8E8;*/
 }
+
+#comment-list img {
+	width: 10%;
+	height: 10%;
+	position: absolute;
+	top: 50%;
+}
+
+#comment-list p {
+	display: inline-block;
+	margin-left: 20px;
+	font-weight: bold;
+	word-wrap: break-word;
+	font-size: 16px;
+}
+
+#comment-list span:before {
+	content: '\A';
+	white-space: pre;
+}
