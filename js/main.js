@@ -19,19 +19,39 @@ $(document).ready(function (){
 		// if the user input a comment, create a li that can be added to the ul in the comment-log
 		if (user_input != null) {
 			var li = document.createElement('li');
+
+			// Profile Pic
 			var profilepic = document.createElement('img');
-			var span_comment = document.createElement('span');
-			var comment = document.createTextNode(user_input);
+
+			// Username
 			var p_name = document.createElement('p');
 			var name = document.createTextNode(user.firstname + ' ' + user.lastname);
 
+			// Comment
+			var span_comment = document.createElement('span');
+			var comment = document.createTextNode(user_input);
+	
+			// Date & Time
+			var today = new Date();
+			var date = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
+			var time = today.getHours() + ':' + ("0" + today.getMinutes()).slice(-2);
+			var amPM = (today.getHours() > 11) ? "PM" : "AM";
+			var p_today = document.createElement('p');
+			var post_date = document.createTextNode("Posted " + date + " " + time + " " + amPM);
+
+			// Adding on to elements
 			profilepic.setAttribute('src', user.profile);
-			span_comment.appendChild(comment);
 			p_name.appendChild(name);
+			span_comment.appendChild(comment);
+			p_today.appendChild(post_date);
+
+			// Adding elements to li
+			li.setAttribute("class", 'list-group-item');
 			li.appendChild(profilepic);
 			li.appendChild(p_name);
 			li.appendChild(span_comment);
-			li.setAttribute("class", 'list-group-item');
+			li.appendChild(p_today);
+			p_today.setAttribute("class", 'posted');
 
 			document.getElementById('comment-list').appendChild(li);
 		}

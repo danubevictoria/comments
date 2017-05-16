@@ -20,19 +20,20 @@
 #comment-list img {
 	width: 10%;
 	height: 10%;
-	position: absolute;
-	top: 50%;
+	float: left;
+	margin-right: 20px;
 }
 
 #comment-list p {
-	display: inline-block;
-	margin-left: 20px;
+	margin: 0;
 	font-weight: bold;
 	word-wrap: break-word;
-	font-size: 16px;
+	font-size: 18px;
 }
 
-#comment-list span:before {
-	content: '\A';
-	white-space: pre;
+#comment-list .posted {
+	font-weight: normal;
+	font-style: italic;
+	font-size: 11px;
+	margin-top: 10px;
 }
