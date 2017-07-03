@@ -39,15 +39,22 @@ $(document).ready(function (){
 			var p_today = document.createElement('p');
 			var post_date = document.createTextNode("Posted " + date + " " + time + " " + amPM);
 
+			// Delete
+			var del_icon = document.createElement('i');
+
 			// Adding on to elements
 			profilepic.setAttribute('src', user.profile);
+			profilepic.setAttribute('class', 'profilepic')
 			p_name.appendChild(name);
 			span_comment.appendChild(comment);
 			p_today.appendChild(post_date);
+			del_icon.setAttribute('class', 'icon-remove-sign-2x');
+			del_icon.setAttribute('id', 'delete');
 
 			// Adding elements to li
 			li.setAttribute("class", 'list-group-item');
 			li.appendChild(profilepic);
+			li.appendChild(del_icon);
 			li.appendChild(p_name);
 			li.appendChild(span_comment);
 			li.appendChild(p_today);
